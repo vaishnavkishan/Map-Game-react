@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Fonts (use with the HTML <link> below) --- */
+@layer base {
+  :root {
+    --font-display: "Unbounded", ui-rounded, "SF Pro Rounded", "Poppins", system-ui, sans-serif;
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  }
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-slate-900 text-slate-100 antialiased;
+    font-family: var(--font-sans);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .kbd {
+    @apply rounded-md border border-white/20 bg-white/10 px-1.5 py-0.5 text-[0.75rem] font-semibold;
+  }
+}
+
+/* --- Nice modal styling using native <dialog> --- */
+@layer components {
+  .modal {
+    @apply rounded-2xl border border-white/10 bg-slate-900/95 p-6 text-slate-100 shadow-2xl backdrop:backdrop-blur;
+    max-width: 34rem;
+  }
+  .modal::backdrop {
+    background: radial-gradient(1200px 600px at 80% 90%, rgba(236,72,153,0.12), transparent),
+                radial-gradient(1000px 600px at 20% 20%, rgba(56,189,248,0.12), transparent),
+                rgba(2,6,23,0.6); /* slate-950/60 */
+    backdrop-filter: blur(4px);
+  }
+}
