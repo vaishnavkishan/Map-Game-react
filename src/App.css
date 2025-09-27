@@ -1,0 +1,91 @@
+/* Keep your existing styles and add/modify these */
+
+/* Make the main container a flex column that fills the entire viewport height */
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 100% of the viewport height */
+  text-align: center;
+}
+
+/* The header will take up its natural height */
+.app-header {
+  /* ... your existing styles ... */
+  flex-shrink: 0; /* Prevents the header from shrinking */
+}
+
+/* Make the main content area fill all remaining space */
+.game-content {
+  flex-grow: 1; /* This is the key property! */
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+
+.game-title {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.finish-button {
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.game-content {
+  padding-top: 20px;
+}
+
+/* Dialog Box (Modal) Styling */
+.guess-dialog {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 2em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+}
+
+/* This styles the greyed-out background behind the modal */
+.guess-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.guess-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.guess-dialog input {
+  padding: 10px;
+  font-size: 1em;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Final results overlay */
+.results-overlay {
+  margin-top: 20px;
+}
+
+/* This div will now grow to fill the space inside .game-content */
+.map-container {
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* Target the SVG inside the ComposableMap to make it fill the container */
+.map-container svg {
+  width: 100%;
+  height: 100%;
+}
