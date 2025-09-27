@@ -121,7 +121,9 @@ function App() {
       {/* Header */}
       <header className="flex items-center justify-between gap-4 border-b border-white/10 bg-gradient-to-r from-slate-900 via-slate-950 to-black px-4 sm:px-6 py-3 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
         <div className="flex items-center gap-3">
-          <div className="h-8 w-8 rounded-xl bg-white/10 ring-1 ring-white/15 shadow-md" />
+          {/* The placeholder div is now an img tag */}
+          <img src="/icon.png" alt="Globe icon" className="h-8 w-8" />
+
           <h1 className="font-display text-xl sm:text-2xl tracking-wide text-white/90">
             Guess the <span className="text-fuchsia-400">Country</span>!
           </h1>
