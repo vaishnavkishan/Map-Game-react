@@ -203,7 +203,9 @@ function App() {
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
               <h3 className="mb-2 font-semibold text-white">Tips</h3>
               <ul className="list-disc pl-5">
-                <li>Use common English names (e.g., “United States”)</li>
+                <li>
+                  Use common English names (e.g., “United States of America”)
+                </li>
                 <li>Spelling matters</li>
               </ul>
             </div>
@@ -232,7 +234,7 @@ function App() {
         className="modal"
       >
         <form onSubmit={handleSubmitGuess} className="space-y-4">
-          <h3 className="font-semibold text-base text-white/90">
+          <h3 className="font-bold text-lg text-white/90">
             What country is this?
           </h3>
           <input
@@ -241,19 +243,19 @@ function App() {
             onChange={(e) => setInputValue(e.target.value)}
             autoFocus
             placeholder="Type country name"
-            className="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-slate-400 focus:border-fuchsia-400/50"
+            className="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-white placeholder:text-slate-400 focus:border-fuchsia-400/50 outline-none transition"
           />
           <div className="flex justify-end gap-2">
             <button
               type="button"
               onClick={handleCloseGuessDialog}
-              className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm hover:bg-white/10"
+              className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10 transition"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="rounded-xl bg-fuchsia-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-900/30 hover:bg-fuchsia-600/90"
+              className="rounded-xl bg-fuchsia-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-900/30 hover:bg-fuchsia-600/90 transition"
             >
               Submit Guess
             </button>

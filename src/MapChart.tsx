@@ -34,7 +34,7 @@ const MapChart: React.FC<MapChartProps> = ({
     <div className="h-full w-full">
       <ComposableMap
         style={{ width: "100%", height: "100%" }}
-        projectionConfig={{ scale: 150 }}
+        projectionConfig={{ scale: 200 }}
       >
         <Geographies geography={geoUrl}>
           {({ geographies }) =>

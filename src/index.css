@@ -25,16 +25,25 @@
   }
 }
 
-/* --- Nice modal styling using native <dialog> --- */
 @layer components {
   .modal {
-    @apply rounded-2xl border border-white/10 bg-slate-900/95 p-6 text-slate-100 shadow-2xl backdrop:backdrop-blur;
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+           rounded-2xl border border-white/10 bg-slate-900/95 p-6 
+           text-slate-100 shadow-2xl z-50 transform scale-90 opacity-0 
+           transition-all duration-200 ease-out;
     max-width: 34rem;
+    width: 90%;
   }
+
+  /* Animate open */
+  dialog[open] {
+    @apply scale-100 opacity-100;
+  }
+
   .modal::backdrop {
     background: radial-gradient(1200px 600px at 80% 90%, rgba(236,72,153,0.12), transparent),
                 radial-gradient(1000px 600px at 20% 20%, rgba(56,189,248,0.12), transparent),
-                rgba(2,6,23,0.6); /* slate-950/60 */
+                rgba(2,6,23,0.6);
     backdrop-filter: blur(4px);
   }
 }
