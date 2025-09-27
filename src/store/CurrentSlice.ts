@@ -16,9 +16,12 @@ export const currentSlice = createSlice({
     selectCountry: (state, action: PayloadAction<GeoObject | null>) => {
       state.selectedCountry = action.payload;
     },
+    resetCurrent: (state) => {
+      state.selectedCountry = initialState.selectedCountry;
+    },
   },
 });
 
-export const { selectCountry } = currentSlice.actions;
+export const { selectCountry, resetCurrent } = currentSlice.actions;
 
 export default currentSlice.reducer;

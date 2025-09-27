@@ -3,8 +3,11 @@ import type { GeoObject } from "./types";
 import MapChart from "./MapChart";
 import { useDispatch, useSelector } from "react-redux";
 import { current, selectedCountries, type AppDispatch } from "./store/store";
-import { selectCountry } from "./store/WorldSlice";
-import { selectCountry as currentSelectCountry } from "./store/CurrentSlice";
+import { resetWorld, selectCountry } from "./store/WorldSlice";
+import {
+  selectCountry as currentSelectCountry,
+  resetCurrent,
+} from "./store/CurrentSlice";
 
 function App() {
   const currentState = useSelector(current);
@@ -97,7 +100,8 @@ function App() {
     setStartTime(null);
     setEndTime(null);
     // Optional: dispatch a Redux action to reset guesses (if you have one)
-    // dispatch(resetWorld());
+    dispatch(resetCurrent());
+    dispatch(resetWorld());
   };
 
   const guesses = worldChallengeState.selectedCountries;
@@ -123,12 +127,19 @@ function App() {
           </h1>
         </div>
 
-        {!isFinished && (
+        {!isFinished ? (
           <button
             onClick={handleFinishGame}
             className="ml-auto inline-flex items-center justify-center rounded-2xl border border-white/15 bg-rose-600/90 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-rose-900/40 transition active:scale-[0.99] hover:bg-rose-600"
           >
             Finish Game
+          </button>
+        ) : (
+          <button
+            onClick={handleRestart}
+            className="rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-900/30 hover:bg-sky-600/90"
+          >
+            Play Again
           </button>
         )}
       </header>

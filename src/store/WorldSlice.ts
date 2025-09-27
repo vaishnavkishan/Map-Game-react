@@ -16,9 +16,12 @@ export const worldSlice = createSlice({
     selectCountry: (state, action: PayloadAction<Guess>) => {
       state.selectedCountries = [action.payload, ...state.selectedCountries];
     },
+    resetWorld: (state) => {
+      state.selectedCountries = initialState.selectedCountries;
+    },
   },
 });
 
-export const { selectCountry } = worldSlice.actions;
+export const { selectCountry, resetWorld } = worldSlice.actions;
 
 export default worldSlice.reducer;
