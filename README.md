@@ -2,6 +2,19 @@
 
 Simple game built to learn React and Redux, built using Vite.
 
+## Deployment
+
+1. `az login`
+1. `yarn build`
+1. `cd dist`
+1. ```
+   az storage blob upload-batch \
+       --account-name stcountrygamereact \
+       --destination '$web' \
+       --source . \
+       --overwrite
+   ```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
